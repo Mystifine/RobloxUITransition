@@ -51,13 +51,11 @@ Use the `Transition.new()` method to create a new transition object.
 - `duration` (number): The total duration of the transition (in seconds).
 - `onHidden` (function): A callback function triggered after the first half of the transition completes.
 - `transition_type` (TransitionType): The type of transition (`CircleExpansion` or `FullscreenFade`).
-- `parent` (Instance): The parent container for the transition UI.
 
 #### Example:
 
 ```lua
 local TweenService = game:GetService("TweenService");
-local parent = script.Parent;
 
 -- Define a callback function
 local function onHiddenCallback()
@@ -65,7 +63,7 @@ local function onHiddenCallback()
 end
 
 -- Create a Circle Expansion Transition
-local circleTransition = Transition.new(2, onHiddenCallback, Transition.TransitionType.CircleExpansion, parent);
+local circleTransition = Transition.new(2, onHiddenCallback, Transition.TransitionType.CircleExpansion);
 
 -- Play the Transition
 circleTransition:Play();
@@ -81,7 +79,7 @@ circleTransition:Play();
 
 **Syntax:**
 ```lua
-Transition.new(duration : number, onHidden : () -> nil, transition_type : TransitionType, parent : Instance) -> Transition
+Transition.new(duration : number, onHidden : () -> nil, transition_type : TransitionType) -> Transition
 ```
 
 ### Transition:Play
